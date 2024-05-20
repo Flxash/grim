@@ -13,6 +13,11 @@ func (e *Editor) render() {
 		}
 	}
 
+	switch e.mode {
+	case VisualMode:
+		e.renderVisualMode()
+	}
+
 	termbox.SetCell(e.cursorX, e.cursorY, ' ', termbox.ColorDefault, termbox.ColorDefault)
 	termbox.Flush()
 }

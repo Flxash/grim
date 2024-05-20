@@ -4,14 +4,26 @@ import (
 	"github.com/nsf/termbox-go"
 )
 
+type Mode int
+
+const (
+	CommandMode Mode = iota
+	InsertMode
+	VisualMode
+)
+
 type Editor struct {
 	cursorX, cursorY int
 	buffer           []string
+	mode             Mode
+	selectionStartX  int
+	selectionStartY  int
 }
 
 func NewEditor() *Editor {
 	return &Editor{
 		buffer: []string{""},
+		mode:   CommandMode,
 	}
 }
 
