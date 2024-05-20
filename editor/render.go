@@ -18,6 +18,8 @@ func (e *Editor) render() {
 		e.renderVisualMode()
 	}
 
+	e.renderStatusBar()
+
 	termbox.SetCell(e.cursorX, e.cursorY, ' ', termbox.ColorDefault, termbox.ColorDefault)
 	termbox.Flush()
 }

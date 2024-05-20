@@ -4,7 +4,6 @@ import (
 	"log"
 
 	"github.com/Flxash/grim/editor"
-
 	"github.com/nsf/termbox-go"
 )
 
